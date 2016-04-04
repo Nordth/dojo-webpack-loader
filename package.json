@@ -1,0 +1,25 @@
+{
+  "name": "dojo-webpack-loader",
+  "version": "0.9.0",
+  "description": "webpack loader for Dojo Toolkit v. 1.x",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "Dojo",
+    "Toolkit"
+  ],
+  "author": "Nordth",
+  "license": "MIT",
+  "repository" :
+  { 
+    "type" : "git", 
+    "url" : "https://github.com/Nordth/dojo-webpack-loader.git"
+  }
+  "dependencies": {
+    "raw-loader": "^0.5.1"
+  }
+}
