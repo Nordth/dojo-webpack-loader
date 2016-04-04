@@ -21,5 +21,9 @@
   },
   "dependencies": {
     "raw-loader": "^0.5.1"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Nordth/dojo-webpack-loader/issues"
+  },
+  "homepage": "https://github.com/Nordth/dojo-webpack-loader#readme"
 }
