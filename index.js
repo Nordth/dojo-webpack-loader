@@ -108,7 +108,7 @@ function dojoSelectorEngineModule(options, engine_id){
 }
 
 function mapDependency(module, options, dep){
-    console.log(dep.dep, dep.name);
+    // console.log(dep.dep, dep.name);
     var dep = parser.parseDependency(dep);
     var norm_dep = normalizeDependency(module, options, dep);
     var result_module = dep.main;
@@ -202,8 +202,8 @@ function processNlsModule(module, parsed, options){
 
 function DojoWebpackLoader(content){
     if (this.cacheable) this.cacheable();
-    console.log("-----------------------")
-    console.log(this.resourcePath);
+    // console.log("-----------------------")
+    // console.log(this.resourcePath);
 
     // Prepare options
     var options = Object.assign({}, defaultOptions, this.options.dojoWebpackLoader);
