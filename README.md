@@ -5,10 +5,15 @@ Originally, i have wrote this loader to be able to use remarkable [dgrid](http:/
 
 Why custom loader is needed? Because of specificity of dojo modules, webpack cannot bundle them itself (when i first tried it just had greedy required all modules until it had failed in error). So `dojo-webpack-loader` transforms modules to handle dojo loaders such as `dojo/nls!`, `dojo/text!` , disables dynamic requiring (all modules should be already in bundle) and provides api for widgets registration (used by`dojo/parser`). 
 
-You can see example of webpacked dgrid here:  https://rawgit.com/Nordth/dojo-webpack-loader-examples/master/dgrid_02_stores.html 
+You can see example of webpacked `dgrid` here:  https://rawgit.com/Nordth/dojo-webpack-loader-examples/master/dgrid_02_stores.html 
 
 ## Examples:
 https://github.com/Nordth/dojo-webpack-loader-examples
 
 ## Documentation
 ... coming soon ...
+
+
+## License
+[The MIT License (MIT)](http://opensource.org/licenses/MIT)
+
