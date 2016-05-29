@@ -1,6 +1,6 @@
 {
   "name": "dojo-webpack-loader",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "webpack loader for Dojo Toolkit v. 1.x",
   "main": "index.js",
   "scripts": {

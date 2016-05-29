@@ -68,7 +68,7 @@ function resolveCoreModuleDependency(package_name, core_path, resource, dep_str)
     if (dep_str == '.') dep_str = path.basename(resource, path.extname(resource));
     // for relative paths only:
     var res = path.resolve(path.dirname(resource), dep_str).substr(core_path.length).replace(/\\/g, '/');
-    if (res[0] != '/') res = '/' . res[0];
+    if (res[0] != '/') res = '/' + res[0];
     return package_name + res;
 }
 
