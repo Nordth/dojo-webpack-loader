@@ -141,7 +141,9 @@ function mapDependency(module, options, dep){
                 break;
             case 'dojo/request/default':
                 // use module by has features
-                if(checkHasFeature(options, 'host-browser') || checkHasFeature(options, 'host-webworker')){
+                if(checkHasFeature(options, 'config-requestProvider')){
+                    result_module = checkHasFeature(options, 'config-requestProvider')
+                }else if(checkHasFeature(options, 'host-browser') || checkHasFeature(options, 'host-webworker')){
                     result_module = "dojo/request/xhr";
                 }else if(checkHasFeature(options, 'host-node')) {
                     result_module = "dojo/request/node";
