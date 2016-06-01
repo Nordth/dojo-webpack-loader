@@ -141,7 +141,9 @@ function mapDependency(module, options, dep){
                 break;
             case 'dojo/request/default':
                 // use module by has features
-                if(checkHasFeature(options, 'host-browser') || checkHasFeature(options, 'host-webworker')){
+                if(checkHasFeature(options, 'config-requestProvider')){
+                    result_module = checkHasFeature(options, 'config-requestProvider')
+                }else if(checkHasFeature(options, 'host-browser') || checkHasFeature(options, 'host-webworker')){
                     result_module = "dojo/request/xhr";
                 }else if(checkHasFeature(options, 'host-node')) {
                     result_module = "dojo/request/node";
@@ -178,9 +180,7 @@ function processNlsModule(module, parsed, options){
         var f = new Function("'using strict'; return " + parsed.moduleBody + ";");
         var nls_descr = f();
         if (nls_descr && nls_descr.root){
-            var res_nls = {
-                root: nls_descr.root
-            };
+            var res_nls = nls_descr.root
             if (options.includeLanguages){
                 options.includeLanguages.forEach(function(lang){
                    if (nls_descr[lang]){
