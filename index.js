@@ -208,8 +208,10 @@ function DojoWebpackLoader(content){
     // console.log(this.resourcePath);
 
     // Prepare options
-    var options = Object.assign({}, defaultOptions, this.options.dojoWebpackLoader);
-    Object.assign(options.staticHasFeatures, defaultOptions.staticHasFeatures);
+    var dojoWebpackLoaderOptions = this.options.dojoWebpackLoader;
+    var options = Object.assign({}, defaultOptions, dojoWebpackLoaderOptions);
+    options.staticHasFeatures = Object.assign({}, defaultOptions.staticHasFeatures, dojoWebpackLoaderOptions.staticHasFeatures);
+
     if (!options.dojoCorePath) throw new Error("DojoWebpackLoader: dojoWebpackLoader.dojoCorePath option is not set");
 
     // Prepare module
