@@ -65,7 +65,7 @@ function preprocessModule(module, options, content){
     var modifiedContent = content.replace(domReadyRegExp, '/* $& */')
     var isModified = content.length !== modifiedContent.length;
     content = isModified ? 'require("domready")(function(){' + modifiedContent + '});' : content;
-    
+
     return content;
 }
 
@@ -165,7 +165,7 @@ function mapDependency(module, options, dep){
                 // Will be loaded via DojoWebpackLoader
                 break;
             default:
-                debugger;
+                result_loaders.push(norm_dep.loaders[i]);
                 break;
         }
     }
