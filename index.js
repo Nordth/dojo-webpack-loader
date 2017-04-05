@@ -10,7 +10,7 @@ function loaderLibDependency(module, dep_str){
 // Change content of module on load
 function preprocessModule(module, options, content){
     var register_in_dojo_require = module.isNls && module.normalizedName;
-    
+
     switch (module.normalizedName) {
         // for dojo/has - inject staticHasFeatures
         case 'dojo/has':
@@ -59,6 +59,13 @@ function preprocessModule(module, options, content){
         module.inject.append = "})());";
     }
 
+    //support for dojo/domReady!
+    // "dojo/domReady!",  or  ,'dojo/domReady!'  -  both are included in case more than one module is required that doesn't return a variable
+    var domReadyRegExp = /([\"|\']dojo\/domReady![\'|\"]\,)|(\,\s*[\"|\']dojo\/domReady![\'|\"](?!\,))/;
+    var modifiedContent = content.replace(domReadyRegExp, '/* $& */')
+    var isModified = content.length !== modifiedContent.length;
+    content = isModified ? 'require("domready")(function(){' + modifiedContent + '});' : content;
+    
     return content;
 }
 
@@ -174,7 +181,7 @@ function mapDependency(module, options, dep){
     return (result_loaders.length ? result_loaders.join("!") + "!" : "") + result_module;
 }
 
-// Set map of 
+// Set map of
 function processNlsModule(module, parsed, options){
     try {
         var f = new Function("'using strict'; return " + parsed.moduleBody + ";");
