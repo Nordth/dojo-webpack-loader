@@ -152,7 +152,7 @@ function mapDependency(module, options, dep){
                 break;
             case 'dojo/text':
                 // use webpack raw-loader instead of dojo/text
-                result_loaders.push("raw");
+                result_loaders.push("raw-loader");
                 break;
             case 'dojo/i18n':
                 // Will be loaded via DojoWebpackLoader
