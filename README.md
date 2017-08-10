@@ -1,4 +1,7 @@
 # dojo-webpack-loader
+
+> ** This repo is not maintained for a while. There is a good alternative: [dojo-webpack-plugin](https://github.com/OpenNTF/dojo-webpack-plugin) which supports webpack 2 **
+
 [Webpack](https://webpack.github.io/) loader for [Dojo Toolkit 1.x](https://dojotoolkit.org/) (actually, tested with version 1.10). It adapts dojo modules so they can be bundled by webpack and even used out of Dojo Toolkit ecosystem.
 
 Originally, i have wrote this loader to be able to use remarkable [dgrid](http://dgrid.io/) component in my new project which based on webpack. Later i have added support for `dijit` package, so i hope it is enough  to work with most of dojo projects.  If you have any questions or problems with loader, please feel free to ask.
